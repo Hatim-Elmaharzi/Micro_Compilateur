@@ -56,9 +56,9 @@ class RTError(Error):
 
 		return 'Traceback (most recent call last):\n' + result
 
-#######################################
+
 # POSITION
-#######################################
+
 
 class Position:
 	def __init__(self, idx, ln, col, fn, ftxt):
@@ -81,9 +81,9 @@ class Position:
 	def copy(self):
 		return Position(self.idx, self.ln, self.col, self.fn, self.ftxt)
 
-#######################################
+
 # TOKENS
-#######################################
+
 
 TT_INT				= 'INT'
 TT_FLOAT    	= 'FLOAT'
@@ -123,9 +123,9 @@ class Token:
 		if self.value: return f'{self.type}:{self.value}'
 		return f'{self.type}'
 
-#######################################
+
 # LEXER
-#######################################
+
 
 class Lexer:
 	def __init__(self, fn, text):
@@ -210,9 +210,9 @@ class Lexer:
 		tok_type = TT_KEYWORD if id_str in KEYWORDS else TT_IDENTIFIER
 		return Token(tok_type, id_str, pos_start, self.pos)
 
-#######################################
+
 # NODES
-#######################################
+
 
 class NumberNode:
 	def __init__(self, tok):
@@ -262,9 +262,9 @@ class UnaryOpNode:
 	def __repr__(self):
 		return f'({self.op_tok}, {self.node})'
 
-#######################################
+
 # PARSE RESULT
-#######################################
+
 
 class ParseResult:
 	def __init__(self):
@@ -289,9 +289,9 @@ class ParseResult:
 			self.error = error
 		return self
 
-#######################################
+
 # PARSER
-#######################################
+
 
 class Parser:
 	def __init__(self, tokens):
@@ -428,10 +428,8 @@ class Parser:
 
 		return res.success(left)
 
-#######################################
-# RUNTIME RESULT
-#######################################
 
+# RUNTIME RESULT
 class RTResult:
 	def __init__(self):
 		self.value = None
@@ -449,9 +447,9 @@ class RTResult:
 		self.error = error
 		return self
 
-#######################################
+
 # VALUES
-#######################################
+
 
 class Number:
 	def __init__(self, value):
@@ -504,9 +502,9 @@ class Number:
 	def __repr__(self):
 		return str(self.value)
 
-#######################################
+
 # CONTEXT
-#######################################
+
 
 class Context:
 	def __init__(self, display_name, parent=None, parent_entry_pos=None):
@@ -515,9 +513,9 @@ class Context:
 		self.parent_entry_pos = parent_entry_pos
 		self.symbol_table = None
 
-#######################################
+
 # SYMBOL TABLE
-#######################################
+
 
 class SymbolTable:
 	def __init__(self):
@@ -536,9 +534,9 @@ class SymbolTable:
 	def remove(self, name):
 		del self.symbols[name]
 
-#######################################
+
 # INTERPRETER
-#######################################
+
 
 class Interpreter:
 	def visit(self, node, context):
@@ -618,9 +616,9 @@ class Interpreter:
 		else:
 			return res.success(number.set_pos(node.pos_start, node.pos_end))
 
-#######################################
+
 # RUN
-#######################################
+
 
 global_symbol_table = SymbolTable()
 global_symbol_table.set("null", Number(0))
