@@ -1,4 +1,4 @@
-INTRODUCTION :
+# INTRODUCTION :
 
 Après une acquisition du cours de technique de compilation, moi, tant qu'étudiant en 2eme année de la filière DATA AND SOFTWARE ENGINEERING, j'ai réalisé ce travail qui consiste à faire un micro compilateur basé sur le langage PYTHON qui se compose de quatre phases dépendantes
 
