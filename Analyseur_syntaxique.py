@@ -1,18 +1,12 @@
-#######################################
-# IMPORTS
-#######################################
-
 from t_indice import *
 
-#######################################
 # CONSTANTS
-#######################################
+
 
 DIGITS = '0123456789'
 
-#######################################
 # ERRORS
-#######################################
+
 
 class Error:
 		def __init__(self, pos_start, pos_end, error_name, details):
@@ -60,9 +54,9 @@ class Position:
 		def copy(self):
 				return Position(self.idx, self.ln, self.col, self.fn, self.ftxt)
 
-#######################################
+
 # TOKENS
-#######################################
+
 
 TT_INT			= 'INT'
 TT_FLOAT    = 'FLOAT'
@@ -91,9 +85,9 @@ class Token:
 				if self.value: return f'{self.type}:{self.value}'
 				return f'{self.type}'
 
-#######################################
+
 # LEXER
-#######################################
+
 
 class Lexer:
 		def __init__(self, fn, text):
@@ -161,9 +155,9 @@ class Lexer:
 				else:
 						return Token(TT_FLOAT, float(num_str), pos_start, self.pos)
 
-#######################################
+
 # NODES
-#######################################
+
 
 class NumberNode:
 	def __init__(self, tok):
@@ -189,9 +183,9 @@ class UnaryOpNode:
 	def __repr__(self):
 		return f'({self.op_tok}, {self.node})'
 
-#######################################
+
 # PARSE RESULT
-#######################################
+
 
 class ParseResult:
 	def __init__(self):
@@ -213,9 +207,9 @@ class ParseResult:
 		self.error = error
 		return self
 
-#######################################
+
 # PARSER
-#######################################
+
 
 class Parser:
 	def __init__(self, tokens):
@@ -294,9 +288,9 @@ class Parser:
 
 		return res.success(left)
 
-#######################################
+
 # RUN
-#######################################
+
 
 def run(fn, text):
 		# Generate tokens
