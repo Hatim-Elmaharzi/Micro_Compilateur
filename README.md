@@ -1,46 +1,45 @@
 # INTRODUCTION :
 
-Après une acquisition du cours de technique de compilation, moi, tant qu'étudiant en 2eme année de la filière DATA AND SOFTWARE ENGINEERING, j'ai réalisé ce travail qui consiste à faire un micro compilateur basé sur le langage PYTHON qui se compose de quatre phases dépendantes
+After acquiring the compilation technique course, I, as a student in the 2nd year of the DATA AND SOFTWARE ENGINEERING sector, I carried out this work which consists in making a micro compiler based on the PYTHON language which consists of four dependent phases:
 
-1-Analyse lexicale
-2-Analyse syntaxique
-3-Analyse sémantique
-4-Interpréteur
+1-Lexical analysis
+2-Syntactic analysis
+3-Semantic analysis
+4-Interpreter
                                           
 
 
-# C'EST QUOI UN COMPILATEUR ?
+# WHAT IS A COMPILATOR?
 
-Un compilateur est tout simplement un programme qui lit un fichier texte de code source écrit dans un langage de programmation et produit du code
-assembleur pour l’architecture de l'ordinateur cible. Il est généralement divisé en plusieurs modules, qui sont décrits dans le diagramme de flux de données à droite. Ce diagramme décrit toutes les étapes nécessaires pour convertir un code source de langage de haut niveau en code assembleur pour une machine cible. Tous les modules utilisent une structure de données partagée appelée Tables des symboles (nous en parlerons plus tard) et ont leurs propres routines de gestion des
-erreurs.
-Voici une image qui resume tout cela: ![Alt text](img/compila.jpg)
+A compiler is simply a program that reads a text file of source code written in a programming language and produces code
+assembler for the target computer architecture. It is usually divided into several modules, which are described in the data flow diagram on the right. This diagram describes all the steps necessary to convert high-level language source code into assembly code for a target machine. All modules use a shared data structure called Symbol Tables (more on this later) and have their own routines for handling symbols.
+errors.
+Here is an image that sums it all up: ![Alt text](img/compila.jpg)
 
-# PHASE ANALYSEUR LEXICALE:
-La toute première étape consiste à diviser le code du programme d'entrée en un groupe d'unités sémantiquement significatives appelées Tokens. Intuitivement, chaque mot et symbole du code source transmet une signification et nous voulons extraire ces Unités lexicales dans une liste ordonnée pour un traitement ultérieur. C'est aussi le travail de l'analyseur lexical de se débarrasser des commentaires de code. La sortie de l'analyseur lexical pour notre exemple de programme ressemblerait à celle afficher dans l’image.     #![Alt text](img/compila-1.jpg)
-Ci joint un texte d'éxécution:   #![Alt text](img/compila-2.jpg)
-En cliquant sur Analyse lexicale, le résultat s'affiche directement sur le résultat;
+# LEXICAL ANALYZER PHASE:
+The very first step is to divide the input program code into a group of semantically meaningful units called Tokens. Intuitively, each word and symbol in the source code conveys meaning and we want to extract these lexical units into an ordered list for further processing. It's also the lexical analyzer's job to get rid of code comments. The lexical analyzer output for our sample program would look like that shown in the image. #![Alt ​​text](img/compila-1.jpg)
+Attached is an execution text: #![Alt ​​text](img/compila-2.jpg)
+By clicking on Lexical Analysis, the result is displayed directly;
 
-# PHASE ANALYSEUR SYNTAXIQUE:
-L'analyseur syntaxique (Parser) est le cœur du compilateur. Il appelle les autres modules, tels que l'analyseur lexical pour récupérer les unités lexicales suivant, et agit comme la boucle principale du compilateur. Il reçoit le flux de tokens du parser en tant qu'entrée et
-produit une structure de données appelée arbre syntaxique (arbre de syntaxe abstraite) en tant que sortie.
-Voici une image démontrant le test sur l'interface graphique:
-#![Alt text](img/image.png)
+# SYNTAX ANALYZER PHASE:
+The parser is the heart of the compiler. It calls other modules, such as the lexical analyzer to retrieve the following lexical units, and acts as the main loop of the compiler. It receives the stream of tokens from the parser as input and
+produces a data structure called a syntax tree (abstract syntax tree) as output.
+Here is an image demonstrating the test on the GUI:
+#![Alt ​​text](img/image.png)
 
-# PHASE ANALYSEUR SEMANTIQUE:
-L’analyseur sémantique fait principalement des rapports d'erreurs pour aider le programmeur à corriger ses erreurs. En plus de cela, il met à jour les types d'identificateurs dans la table de symboles, ce qui est une connaissance précieuse pour le générateur de code plus tard.
-La partie de vérification des erreurs n'est pas obligatoire, mais fortement recommandée car le comportement du programme compilé peut être indéfini si, par exemple, nous permettons de passer plus d'arguments à une fonction qu'elle n'est conçue pour gérer. Nous finissons
-probablement par écraser quelque chose dans la mémoire et ce n'est généralement pas un bon signe pour un comportement correct du programme.
-Voici des exemples des errurs générées: #![Alt text](img/compila-3.jpg)
-#![Alt text](img/compila-4.jpg)
+# SEMANTIC ANALYZER PHASE:
+The semantic analyzer mainly reports errors to help the programmer correct errors. On top of that, it updates the identifier types in the symbol table, which is valuable knowledge for the code generator later.
+The error checking part is not required, but highly recommended because the behavior of the compiled program may be undefined if, for example, we allow more arguments to be passed to a function than it is designed to handle. We finish
+probably by overwriting something in memory and this is generally not a good sign for correct program behavior.
+Here are examples of the errors generated: #![Alt ​​text](img/compila-3.jpg)
+#![Alt ​​text](img/compila-4.jpg)
 
+#  CONCLUSION :
+This project allowed me to perfectly understand the chain of
+compiling a code gave us the opportunity to discover
+a lot of problems, to resolve them over time and
+clear up some ambiguities.
 
-# CONCLUSION :
-Ce projet m'a permis de comprendre parfaitement la chaine de
-compilation d’un code est nous a donné l’occasion de découvrir
-énormément de problèmes, de les résoudre au fil du temps et de
-lever certaines ambiguïté.
-
-L’expérience était très intéressante non seulement elle m'a
-permis de passer de la partie théorique à la partie pratique mais
-aussi de s’entrainer et de m'ouvrir la porte vers le monde infini de programmation.                  #python #tkinter
+The experience was very interesting not only did it
+allowed to move from the theoretical part to the practical part but
+also to train and open the door to the infinite world of programming.
